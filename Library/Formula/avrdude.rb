@@ -12,8 +12,12 @@ class Avrdude < Formula
   end
 
   def patches
-    # Reduce usb_bulk_read timeout.
-    { :p2 => "https://github.com/neonquill/avrdude/commit/b0d39fea608464a599cc2087ed18f0b5159ad8c5.diff"}
+   { :p2 => 
+      # Reduce usb_bulk_read timeout.
+      ["https://github.com/neonquill/avrdude/commit/b0d39fea608464a599cc2087ed18f0b5159ad8c5.diff",
+     # Add support for the ATXMega16d4.
+       "https://github.com/neonquill/avrdude/commit/69fab41c4b51d207fe1ca54c72e87f4c2f020bc4.diff"]
+    }
   end
 
   def install
